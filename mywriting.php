@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Health</title>
+    <title>Philosophical Writings</title>
 	
 	<!-- Google tag (gtag.js) --> 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-XVDW7BCQYV"></script>
@@ -58,7 +58,7 @@
 <body>
     <div class="content">
 	  <p><a href="home.php">← Back to Home</a></p>
-        <h1>My Writing</h1>
+        <h1>Philosophical Writings</h1>
 		
  <h1>Introduction</h1>
 		<p>This writing is a work in progress and not yet finalized. I’ve uploaded it to my website so that family and friends—if they are interested—can read it while I continue refining it.</p>
@@ -95,36 +95,7 @@
 
 	<p><em>23 Apr 2025 - To continue</em></p>
 
-	<h2>Principles for Life</h2>
-
-	<p>Do not gossip—do not discuss friends or family members with other friends or family members.</p>
-		
-	<p>Do not blame others for negative events—especially acquaintances and everyday people. 
-	This excludes politicians and world leaders who hold power and responsibility.</p>
-      
-	   
-	<p>Be humble. A humble person will not feel superior to others, 
-	will not look down on anyone, will be patient, will not insist on his honor, 
-	and will not be easily offended. He accepts every person with love and respect.</p>
-		
-	<p>Be a forgiving person.</p>
-
-	<p>Be a happy person that others enjoy being around. 
-	People who constantly complain or talk about their problems rarely 
-	bring happiness to others—and are rarely happy themselves.</p>
-
-	<p>Be careful not to be drawn into pride. 
-	Any power, wisdom, wealth, or success a person has was given to them by God. 
-	When one lives with this understanding, they move away from pride and grow in humility.</p>
-
-	<p>Avoid honor and attention. 
-	A person who wants to acquire humility should run away from honor, 
-	not seek praise, and not be offended when he does not receive recognition.</p>
-		
-	<p>A person who sets aside their ego becomes a vessel for receiving the truth. 
-	Ego blocks the ability to observe the truth.</p>
-
-	<p><em>1 May 2025 - To continue</em></p>
+	
 
 
 

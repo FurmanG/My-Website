@@ -38,12 +38,24 @@
 
 <script type="text/javascript">
     function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'en',
-            includedLanguages: 'es,he,no', // Add more if needed
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element');
+        try {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'es,iw,no', // Using 'iw' instead of 'he' for Hebrew
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: true
+            }, 'google_translate_element');
+            console.log('Google Translate initialized successfully');
+        } catch (error) {
+            console.error('Error initializing Google Translate:', error);
+        }
     }
+
+    // Add error handling for script loading
+    window.onerror = function(msg, url, lineNo, columnNo, error) {
+        console.error('Error loading Google Translate:', msg);
+        return false;
+    };
 
     // Scale iframe after it loads
     function enlargeIframe() {
@@ -66,4 +78,16 @@
     });
 </script>
 
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- Load Google Translate script with error handling -->
+<script type="text/javascript">
+    function loadGoogleTranslate() {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        script.onerror = function() {
+            console.error('Failed to load Google Translate script');
+        };
+        document.head.appendChild(script);
+    }
+    loadGoogleTranslate();
+</script>

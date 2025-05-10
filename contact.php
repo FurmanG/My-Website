@@ -1,9 +1,7 @@
 <?php
 session_start();
-$siteKey = '6LcRliwrAAAAAKDCIFm8Tk_GOE0ua1RMa8Am06R8'; //  Replace with your Google reCAPTCHA Site Key
-$secretKey = '6LcRliwrAAAAAKg9s6mnjc_lvdMKK_7W0WC6_cKl'; //  Replace with your Google reCAPTCHA Secret Key
-
-
+$siteKey = '6LcRliwrAAAAAKDCIFm8Tk_GOE0ua1RMa8Am06R8';
+$secretKey = '6LcRliwrAAAAAKg9s6mnjc_lvdMKK_7W0WC6_cKl';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = htmlspecialchars(trim($_POST['name']));
@@ -11,22 +9,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $message = htmlspecialchars(trim($_POST['message']));
     $recaptchaResponse = $_POST['g-recaptcha-response'];
 
-    // Verify CAPTCHA with Google
     $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$recaptchaResponse");
     $captchaSuccess = json_decode($verify)->success;
 
     if ($captchaSuccess) {
-        $to = "your@email.com";
+        $to = "gilfurman88@gmail.com";
         $subject = "New Contact Message from $name";
         $body = "From: $name <$email>\n\n$message";
-        $headers = "From: $email";
+        $headers = "From: gilfurman88@gmail.com\r\n";
+        $headers .= "Reply-To: $email\r\n";
+        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
         $success = mail($to, $subject, $body, $headers);
+        if (!$success) {
+            error_log("Mail failed to send to $to");
+        }
     } else {
         $error = "CAPTCHA verification failed. Please try again.";
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,27 +48,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .form-box {
             background-color: rgba(0, 0, 0, 0.6);
             margin: auto;
-            padding: 20px;
+            padding: 40px 20px;
             width: 90%;
-            max-width: 400px;
+            max-width: 600px;
             border-radius: 10px;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007BFF;
-            color: white;
-            cursor: pointer;
         }
         .back-link {
             display: block;
@@ -77,21 +63,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 <div class="form-box">
-<?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($success) && $success): ?>
-    <h2>Message Sent!</h2>
-<?php elseif ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
-    <h2>Failed to Send Message</h2>
-    <?php if (isset($error)) echo "<p>$error</p>"; ?>
-<?php else: ?>
-    <h2>Contact Me</h2>
-    <form method="post">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <div class="g-recaptcha" data-sitekey="<?= $siteKey ?>"></div>
-        <button type="submit">Send</button>
-    </form>
-<?php endif; ?>
+    <div style="text-align: center; padding: 30px; font-family: Arial, sans-serif;">
+        <h2>Contact Page Under Construction</h2>
+        <p>Thank you for visiting!</p>
+        <p>Our contact form is not yet functional — we’re still working on it.</p>
+        <p>Please check back soon or reach out through another method if urgent.</p>
+    </div>
     <a class="back-link" href="home.php">Back to Home</a>
 </div>
 </body>

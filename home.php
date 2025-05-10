@@ -115,13 +115,13 @@
     </div>
 
     <div class="button-grid">
-	    <a href="mywriting.php">My Writing</a>
-		<a href="Wisdom.php">Wisdom</a>
-        <a href="Spirituality.php">Spirituality</a>
-        <a href="health.php">Health</a>
-        <a href="funny.php">Funny</a>
-        <a href="History.php">History!?</a>
-        <a href="images.php">Images</a>
+	    <a href="mywriting.php">Philosophical Writings</a>
+		<a href="Wisdom.php">Wisdom Writings</a>
+        <a href="Spirituality.php">Spirituality - Links</a>
+        <a href="health.php">Health - Links</a>
+        <a href="funny.php">Funny - Links</a>
+        <a href="History.php">History!? - Links</a>
+        <a href="images.php">Photos</a>
         <a href="Futur1.php">Future</a>
         <a href="Futur2.php">Future</a>
 	</div>
